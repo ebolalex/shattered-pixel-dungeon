@@ -27,6 +27,6 @@ jobs:
     - name: Archive jar
       uses: actions/upload-artifact@v2
       with:
-        name: desktop_jar
+        name: desktop.jar
         path: desktop/build/libs/*.jar
         retention-days: 3
