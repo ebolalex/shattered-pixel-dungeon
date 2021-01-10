@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+export DH_VERBOSE = 1
+export GRADLE_USER_HOME=$(CURDIR)/.gradlehome
+
+%:
+	dh $@ --buildsystem=gradle
+
+override_dh_auto_build:
+	./gradlew desktop:release --no-daemon --console plain --stacktrace \
+		-Ddebian.package=shattered-pixel-dungeon \
+		-Dfile.encoding=UTF-8 --parallel
+
+override_dh_auto_test:
+	true
+
+override_dh_auto_install:
+	cp -a desktop/build/libs/desktop-*.jar shattered.jar
+	dh_auto_install
+
