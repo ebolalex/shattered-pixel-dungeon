@@ -15,5 +15,16 @@ override_dh_auto_test:
 
 override_dh_auto_install:
 	cp -a desktop/build/libs/desktop-*.jar shattered.jar
+	if [ ! -d hicolor ] ; then mkdir hicolor ; fi
+	if [ ! -d hicolor/16x16 ] ; then mkdir hicolor/16x16 ; fi
+	cp -a desktop/src/main/assets/icons/icon_16.png hicolor/16x16/shattered-pixel-dungeon.png
+	if [ ! -d hicolor/32x32 ] ; then mkdir hicolor/32x32 ; fi
+	cp -a desktop/src/main/assets/icons/icon_32.png hicolor/32x32/shattered-pixel-dungeon.png
+	if [ ! -d hicolor/64x64 ] ; then mkdir hicolor/64x64 ; fi
+	cp -a desktop/src/main/assets/icons/icon_64.png hicolor/64x64/shattered-pixel-dungeon.png
+	if [ ! -d hicolor/128x128 ] ; then mkdir hicolor/128x128 ; fi
+	cp -a desktop/src/main/assets/icons/icon_128.png hicolor/128x128/shattered-pixel-dungeon.png
+	if [ ! -d hicolor/256x256 ] ; then mkdir hicolor/256x256 ; fi
+	cp -a desktop/src/main/assets/icons/icon_256.png hicolor/256x256/shattered-pixel-dungeon.png
 	dh_auto_install
 

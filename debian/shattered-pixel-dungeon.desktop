@@ -2,7 +2,7 @@
 Categories=Game;AdventureGame;
 Comment=2D RPG game
 Exec=/usr/bin/java -jar /usr/share/games/shattered-pixel-dungeon/shattered.jar
-Icon=
+Icon=shattered-pixel-dungeon
 Name=Shattered Pixel Dungeon
 Terminal=false
 Type=Application
