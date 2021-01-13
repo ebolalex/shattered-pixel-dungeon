@@ -1,0 +1,17 @@
+Source: shattered-pixel-dungeon
+Section: games
+Priority: optional
+Maintainer: Federico Ceratto <federico@debian.org>
+Build-Depends: debhelper-compat (= 13),
+ gradle-debian-helper
+Standards-Version: 4.5.1
+Homepage: <insert the upstream URL, if relevant>
+#Vcs-Browser: https://salsa.debian.org/debian/shattered-pixel-dungeon
+#Vcs-Git: https://salsa.debian.org/debian/shattered-pixel-dungeon.git
+Rules-Requires-Root: no
+
+Package: shattered-pixel-dungeon
+Architecture: all
+Depends: ${misc:Depends}
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>
