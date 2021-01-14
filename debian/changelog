@@ -1,5 +1,9 @@
-shattered-pixel-dungeon (0.9.1b-gdx1.9.13-1) UNRELEASED; urgency=medium
+shattered-pixel-dungeon (0.9.1d-gdx1.9.13-1) UNRELEASED; urgency=medium
 
+  [ Federico Ceratto ]
   * Unofficial package - not for Debian uploading
 
- -- Federico Ceratto <federico@debian.org>  Sat, 09 Jan 2021 18:29:29 +0000
+  [ ebolalex ]
+  * 
+
+ -- ebolalex  <ebolalex@users.noreply.github.com>  Thu, 14 Jan 2021 22:39:33 +0100

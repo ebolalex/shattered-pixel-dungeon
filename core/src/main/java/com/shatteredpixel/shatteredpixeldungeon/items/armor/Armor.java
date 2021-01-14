@@ -170,26 +170,28 @@ public class Armor extends EquipableItem {
 			BrokenSeal.WarriorShield sealBuff = hero.buff(BrokenSeal.WarriorShield.class);
 			if (sealBuff != null) sealBuff.setArmor(null);
 
-			if (seal.level() > 0){
+			BrokenSeal detaching = seal;
+			seal = null;
+
+			if (detaching.level() > 0){
 				degrade();
 			}
-			if (seal.getGlyph() != null){
+			if (detaching.getGlyph() != null){
 				if (hero.hasTalent(Talent.RUNIC_TRANSFERENCE)
-						&& (Arrays.asList(Glyph.common).contains(seal.getGlyph().getClass())
-							|| Arrays.asList(Glyph.uncommon).contains(seal.getGlyph().getClass()))){
+						&& (Arrays.asList(Glyph.common).contains(detaching.getGlyph().getClass())
+							|| Arrays.asList(Glyph.uncommon).contains(detaching.getGlyph().getClass()))){
 					inscribe(null);
 				} else if (hero.pointsInTalent(Talent.RUNIC_TRANSFERENCE) == 2){
 					inscribe(null);
 				} else {
-					seal.setGlyph(null);
+					detaching.setGlyph(null);
 				}
 			}
 			GLog.i( Messages.get(Armor.class, "detach_seal") );
 			hero.sprite.operate(hero.pos);
-			if (!seal.collect()){
-				Dungeon.level.drop(seal, hero.pos);
+			if (!detaching.collect()){
+				Dungeon.level.drop(detaching, hero.pos);
 			}
-			seal = null;
 		}
 	}
 
@@ -558,7 +560,7 @@ public class Armor extends EquipableItem {
 		updateQuickslot();
 		//the hero needs runic transference to actually transfer, but we still attach the glyph here
 		// in case they take that talent in the future
-		if (glyph != null && seal != null){
+		if (seal != null){
 			seal.setGlyph(glyph);
 		}
 		return this;
