@@ -2,9 +2,8 @@ Source: shattered-pixel-dungeon
 Section: games
 Priority: optional
 Maintainer: Federico Ceratto <federico@debian.org>
-Build-Depends: debhelper-compat (= 13),
- gradle-debian-helper, 
- java8-sdk
+Build-Depends: debhelper-compat (= 12),
+ gradle-debian-helper
 Standards-Version: 4.5.1
 Homepage: https://shatteredpixel.com
 #Vcs-Browser: https://salsa.debian.org/debian/shattered-pixel-dungeon
