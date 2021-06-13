@@ -1,0 +1,23 @@
+Source: shattered-pixel-dungeon
+Section: games
+Priority: optional
+Maintainer: Federico Ceratto <federico@debian.org>
+Build-Depends: debhelper-compat (= 12),
+ gradle-debian-helper
+Standards-Version: 4.5.1
+Homepage: https://shatteredpixel.com
+#Vcs-Browser: https://salsa.debian.org/debian/shattered-pixel-dungeon
+#Vcs-Git: https://salsa.debian.org/debian/shattered-pixel-dungeon.git
+Rules-Requires-Root: no
+
+Package: shattered-pixel-dungeon
+Architecture: all
+Depends: java8-runtime, ${misc:Depends}
+Description: Roguelike game with pixel-art graphics and simple interface
+ Shattered Pixel Dungeon is a Roguelike RPG, with pixel art
+ graphics and lots of variety and replayability. 
+ Every game is unique, with four different playable characters,
+ randomized levels and enemies, and over 150 items to collect
+ and use. The game is simple to get into, but has lots of depth.
+ Strategy is required if you want to win!
+

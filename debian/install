@@ -1,0 +1,8 @@
+shattered.jar usr/share/games/shattered-pixel-dungeon
+debian/shattered-pixel-dungeon.desktop usr/share/applications
+hicolor/256x256/shattered-pixel-dungeon.png usr/share/pixmaps/
+hicolor/256x256/shattered-pixel-dungeon.png usr/share/icons/hicolor/256x256/apps
+hicolor/128x128/shattered-pixel-dungeon.png usr/share/icons/hicolor/128x128/apps
+hicolor/64x64/shattered-pixel-dungeon.png usr/share/icons/hicolor/64x64/apps
+hicolor/32x32/shattered-pixel-dungeon.png usr/share/icons/hicolor/32x32/apps
+hicolor/16x16/shattered-pixel-dungeon.png usr/share/icons/hicolor/16x16/apps

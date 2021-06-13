@@ -1,0 +1,29 @@
+name: Debian Package
+
+on:
+  push:
+    tags: v[0-9]+.[0-9]+.[0-9]+.*
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build Debian package
+        uses: singingwolfboy/build-dpkg-buster@v1
+        id: build
+        with:
+          args: --unsigned-source --unsigned-changes --build=binary
+      
+      - name: Archive Debian Package
+        uses: actions/upload-artifact@v1
+        with:
+          name: ${{ steps.build.outputs.filename }}
+          path: ${{ steps.build.outputs.filename }}
+          retention-days: 3
