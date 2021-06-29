@@ -90,7 +90,7 @@ public class Item implements Bundlable {
 	// whether an item can be included in heroes remains
 	public boolean bones = false;
 	
-	private static Comparator<Item> itemComparator = new Comparator<Item>() {
+	public static final Comparator<Item> itemComparator = new Comparator<Item>() {
 		@Override
 		public int compare( Item lhs, Item rhs ) {
 			return Generator.Category.order( lhs ) - Generator.Category.order( rhs );
@@ -205,7 +205,9 @@ public class Item implements Bundlable {
 				if (isSimilar( item )) {
 					item.merge( this );
 					item.updateQuickslot();
-					Talent.onItemCollected( Dungeon.hero, item );
+					if (Dungeon.hero != null && Dungeon.hero.isAlive()) {
+						Talent.onItemCollected(Dungeon.hero, item);
+					}
 					return true;
 				}
 			}
